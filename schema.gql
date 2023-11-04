@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type KoreanFinance {
+  basDt: String!
+  srtnCd: String!
+  isinCd: String!
+  itmsNm: String!
+  mrktCtg: String!
+  clpr: String!
+  vs: String!
+  fltRt: String!
+  mkp: String!
+  hipr: String!
+  lopr: String!
+  trqu: String!
+  trPrc: String!
+  lstgStCnt: String!
+  mrktTotAmt: String!
+}
+
+type StockName {
+  name: String!
+  isinCd: String!
+  mrktCtg: String!
+}
+
+type Query {
+  _root: Boolean!
+  getKoreanFinance(financeInput: KoreanFinanceInput!): [KoreanFinance!]!
+  searchStockNameList(input: StcokNameInput!): [StockName!]!
+}
+
+input KoreanFinanceInput {
+  name: String!
+}
+
+input StcokNameInput {
+  name: String!
+}
+
+type Subscription {
+  subscriptionSearchStockNameList: [StockName!]!
+}

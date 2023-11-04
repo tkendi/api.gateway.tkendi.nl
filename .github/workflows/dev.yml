@@ -1,0 +1,33 @@
+name: Version up Development Deployment
+
+on:
+    push:
+        branches: [dev]
+
+jobs:
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - uses: go-semantic-release/action@v1
+              id: semrel
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  update-file: package.json
+                  dry: true
+                  prerelease: true
+                  force-bump-patch-version: true
+                  custom-arguments: '--no-ci'
+                  changelog-generator-opt: 'emojis=true'
+
+            - uses: go-semantic-release/action@v1
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  update-file: package.json
+                  force-bump-patch-version: true
+                  prerelease: true
+                  custom-arguments: '--no-ci'
+                  changelog-generator-opt: 'emojis=true'

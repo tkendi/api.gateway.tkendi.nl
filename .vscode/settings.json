@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": false,
+    "eslint.codeActionsOnSave.rules": null,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.requireConfig": true,
+    "editor.formatOnPaste": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+}
