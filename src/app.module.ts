@@ -16,7 +16,11 @@ import { AppService } from "./app.service";
           subgraphs: [
             {
               name: "accounts",
-              url: "http://localhost:8002/graphql",
+              url: "https://api.authorize.tkendi.nl/graphql",
+            },
+            {
+              name: "finance",
+              url: "https://api.finance.tkendi.nl/graphql",
             },
           ],
         }),
