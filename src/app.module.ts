@@ -28,6 +28,10 @@ const envFilePath = getEnvPath(`.`);
               name: "finance",
               url: "https://api.finance.tkendi.nl/graphql",
             },
+            {
+              name: "status",
+              url: "https://api.status.tkendi.nl/graphql",
+            },
           ],
         }),
       },
